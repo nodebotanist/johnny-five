@@ -40,11 +40,11 @@ five.Board().on("ready", function() {
   // Fired following a "motionstart" event
   // when no movement has occurred in X ms
   //
-  prox.on("motionstart", function(err, timestamp) {
+  prox.on("motionstart", function() {
     led.on();
   });
 
-  prox.on("motionend", function(err, timestamp) {
+  prox.on("motionend", function() {
     led.off();
   });
 

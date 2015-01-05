@@ -44,7 +44,7 @@ five.Board().on("ready", function() {
   //
   // Fires continuously, every 66ms.
   //
-  ir.on("data", function(err, timestamp) {
+  ir.on("data", function() {
     // console.log( "data" );
   });
 });

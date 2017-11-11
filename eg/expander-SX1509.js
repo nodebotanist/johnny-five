@@ -16,10 +16,20 @@ board.on("ready", function() {
       board: virtual
     });
 
+    var button = new five.Button({
+      pin: 0,
+      board: virtual
+    });
+
     led.on();
 
+    button.on("press", () => {
+      led.toggle();
+    })
+
     this.repl.inject({
-      led: led
+      led: led,
+      virtual: virtual
     });
   })
 });

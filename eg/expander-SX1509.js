@@ -11,24 +11,29 @@ board.on("ready", function() {
 
   virtual.on("ready", () => {
     console.log('virtual board ready');
-    var led = new five.Led({
+    var red = new five.Led({
+      pin: 1,
+      board: virtual
+    });
+
+    var green = new five.Led({
       pin: 15,
       board: virtual
     });
 
-    var button = new five.Button({
-      pin: 0,
+    var blue = new five.Led({
+      pin: 6,
       board: virtual
     });
-
-    led.on();
-
-    button.on("press", () => {
-      led.toggle();
-    })
+    
+    red.on();
+    green.on();
+    blue.on(); 
 
     this.repl.inject({
-      led: led,
+      red,
+      green,
+      blue,
       virtual: virtual
     });
   })
